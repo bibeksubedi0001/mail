@@ -1,0 +1,48 @@
+/* the Fee waivers view of the Applications page (fee_waivers.py) */
+.fw-short dd a{color:var(--ink)}
+.fw-short dt .h3n{margin-left:6px;color:var(--ink-3);letter-spacing:0}
+.fw-todo{max-width:96ch}
+.fw-mails{margin-top:22px}
+.fw-mails .draft h4{font-size:19px}
+.fw-list{list-style:none;margin:14px 0 0;padding:0;border-top:1px solid var(--ink)}
+.fw{display:grid;grid-template-columns:300px minmax(0,1fr);gap:0 44px;padding:20px 0 18px;border-bottom:1px solid var(--rule);
+  scroll-margin-top:calc(var(--nav-h) + 62px)}
+.fw h5{margin:0 0 6px;font:600 18px/1.25 var(--serif)}
+.fw-meta{margin:0 0 4px;font:13px/1.5 var(--sans);color:var(--ink-3)}
+.fw-meta .lbl{margin-right:6px}
+.fw-meta .left{margin-left:8px}
+.fw-meta .tag{margin-left:2px}
+.fw-fee{margin:8px 0 4px;font:14.5px/1.5 var(--sans);color:var(--ink)}
+.fw-fee .lbl{margin-right:6px}
+.fw-flag{margin:8px 0 0}
+.fw.v-free .fw-flag,.fw.v-request .fw-flag,.fw.v-event .fw-flag{color:var(--accent)}
+.fw.v-through_faculty .fw-flag{color:var(--amber)}
+.fw.v-none_for_him .fw-flag,.fw.v-none .fw-flag,.fw.v-unknown .fw-flag{color:var(--ink-3)}
+.fw-how{max-width:92ch}
+.fw-why{margin:0 0 12px;font:600 15.5px/1.5 var(--sans);color:var(--ink)}
+.fw-route{margin:0 0 14px;padding-left:14px;border-left:2px solid var(--accent)}
+.fw-route.fw-shut{border-left-color:var(--rule-2)}
+.fw-what{margin:0;font:15px/1.55 var(--sans);color:var(--ink)}
+.fw-shut .fw-what{color:var(--ink-2)}
+.fw-steps{margin:8px 0 0;padding-left:1.4em;font:14.5px/1.55 var(--sans);color:var(--ink-2)}
+.fw-steps li{margin:0 0 5px;overflow-wrap:anywhere}
+.fw-when{margin:8px 0 0;font:14px/1.5 var(--sans);color:var(--ink-2)}
+.fw-when .lbl{margin-right:6px}
+.fw-src{margin:8px 0 0;font:13px/1.55 var(--sans);color:var(--ink-3);overflow-wrap:anywhere}
+.fw-src q{font-style:italic}
+.fw-unsure{color:var(--bounce)}
+.fw-pend td:first-child{min-width:190px}
+.fw-pend td:nth-child(2){min-width:170px}
+@media (max-width:1180px){
+  .fw{grid-template-columns:240px minmax(0,1fr);gap:0 32px}
+}
+@media (max-width:760px){
+  .fw{grid-template-columns:1fr;gap:12px 0}
+}
+
+/* the English test view of the Applications page (english_waivers.py), laid out like the Fee waivers view */
+.fw.v-exempt .fw-flag{color:var(--accent)}
+.fw.v-through_department .fw-flag{color:var(--amber)}
+.fw.v-not_for_him .fw-flag{color:var(--ink-3)}
+.ew-dates td:first-child{white-space:nowrap}
+.ew-dates td:nth-child(2){min-width:190px}

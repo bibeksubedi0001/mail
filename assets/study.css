@@ -1,0 +1,112 @@
+/* study pages: equations, boxes for what to say and how the Arun model does it, drawn diagrams (study_guide.py) */
+math{font-family:"Cambria Math","STIX Two Math","Latin Modern Math",math;font-size:1.06em}
+code{font:500 .86em/1.3 var(--mono);color:var(--ink);background:var(--paper-2);padding:1px 4px;overflow-wrap:anywhere}
+.study-lead{margin-top:30px;max-width:110ch}
+.prep-sec>.plan-intro:first-of-type{margin-top:18px}
+.eq{margin:18px 0 0;padding:14px 20px 14px;max-width:880px;background:var(--white);border:1px solid var(--rule-2);border-left:3px solid var(--ink)}
+.eq>.lbl{display:block;margin-bottom:8px;color:var(--accent)}
+.eq-m{padding:7px 0;font-size:18px;min-width:max-content}
+.eq-w{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin:10px 0 0;padding-top:8px;border-top:1px solid var(--rule);
+  font:13.5px/1.5 var(--sans);color:var(--ink-2)}
+.eq-w>div{display:grid;grid-template-columns:74px minmax(0,1fr);gap:0 10px;padding:4px 0}
+.eq-w dt{color:var(--ink);font-size:15px}
+.eq-w dd{margin:0}
+.terms{margin:16px 0 0;max-width:980px;border-top:1px solid var(--ink)}
+.terms>div{display:grid;grid-template-columns:210px minmax(0,1fr);gap:0 22px;padding:10px 0 9px;border-bottom:1px solid var(--rule)}
+.terms dt{font:600 16px/1.4 var(--serif)}
+.terms dd{margin:0;font:14.5px/1.55 var(--sans);color:var(--ink-2)}
+.say,.ours{margin:16px 0 0;padding:12px 18px 13px;max-width:880px;background:var(--white);border-left:3px solid var(--accent)}
+.ours{border-left-color:var(--apply)}
+.say .lbl{color:var(--accent)}.ours .lbl{color:var(--apply)}
+.say p,.ours p{margin:6px 0 0;font:16px/1.55 var(--serif)}
+.ours p{font:15px/1.55 var(--sans);color:var(--ink-2)}
+.ours .plan-list{margin-top:8px;font:15px/1.5 var(--sans);color:var(--ink-2)}
+.ours .plan-list li{margin-bottom:6px}
+.issues{margin:16px 0 0;max-width:1100px;border-top:1px solid var(--ink)}
+.issue{padding:16px 0 14px;border-bottom:1px solid var(--rule)}
+.issue h4{display:flex;align-items:baseline;gap:12px;margin:0 0 8px;font:600 19px/1.3 var(--serif)}
+.iss-n{font:500 12px/1 var(--mono);color:var(--bounce)}
+.issue dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 30px;margin:0}
+.issue dt{font:600 10.5px/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:5px}
+.issue dd{margin:0;font:14.5px/1.55 var(--sans);color:var(--ink-2)}
+.issue dl>div:last-child dd{color:var(--ink);padding-left:12px;border-left:3px solid var(--accent)}
+table.study-t td:first-child{min-width:128px}
+table.study-t code{white-space:nowrap}
+table.study-t.wide td:first-child{font:600 14.5px/1.45 var(--sans)}
+table.study-t.num td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+.study-w{overflow-x:auto}
+svg.pchart .ln{fill:none;stroke-width:2;stroke-linejoin:round}
+svg.pchart .hit{fill:none;stroke:transparent;stroke-width:16;pointer-events:stroke}
+svg.pchart .hit+.ln{pointer-events:none}
+svg.pchart .hit:hover+.ln{stroke-width:3.2}
+svg.pchart .ln.thin{stroke-width:1.2}
+svg.pchart .ln.dash{stroke-dasharray:6 4}
+svg.pchart .tickm{stroke:var(--ink-3);stroke-width:1}
+svg.pchart .k0,.legend i.k0{stroke:var(--ink);background:var(--ink)}
+svg.pchart .k1,.legend i.k1{stroke:var(--accent);background:var(--accent)}
+svg.pchart .k2,.legend i.k2{stroke:var(--apply);background:var(--apply)}
+svg.pchart .k3,.legend i.k3{stroke:var(--bounce);background:var(--bounce)}
+svg.pchart .k4,.legend i.k4{stroke:#c9961f;background:#c9961f}
+svg.pchart .k5,.legend i.k5{stroke:#76589a;background:#76589a}
+svg.pchart .k6,.legend i.k6{stroke:var(--ink-3);background:var(--ink-3)}
+svg.pchart rect.k0,svg.pchart circle.k0{fill:var(--ink)}svg.pchart rect.k1,svg.pchart circle.k1{fill:var(--accent)}
+svg.pchart rect.k2,svg.pchart circle.k2{fill:var(--apply)}svg.pchart rect.k3,svg.pchart circle.k3{fill:var(--bounce)}
+svg.pchart rect.k4,svg.pchart circle.k4{fill:#c9961f}svg.pchart rect.k5,svg.pchart circle.k5{fill:#76589a}
+svg.pchart rect.k6,svg.pchart circle.k6{fill:var(--ink-3)}
+svg.pchart rect.k7{fill:var(--paper-2);stroke:var(--rule-2);stroke-width:1}
+svg.pchart rect[class^="k"]{stroke:none}
+svg.pchart circle.pt{stroke:var(--paper);stroke-width:.8;fill-opacity:.75}
+svg.pchart circle.open{fill:var(--white);stroke-width:2}
+svg.pchart .zone{fill:var(--accent);fill-opacity:.1}
+svg.pchart .zone.z2{fill:var(--bounce);fill-opacity:.1}
+svg.pchart .zone.z3{fill:var(--apply);fill-opacity:.12}
+svg.pchart path.area{stroke:none;fill-opacity:.55}
+svg.pchart path.area.k1{fill:var(--accent)}svg.pchart path.area.k2{fill:var(--apply)}svg.pchart path.area.k4{fill:#c9961f}
+svg.pchart .ref{stroke:var(--ink-3);stroke-width:1;stroke-dasharray:3 3}
+svg.pchart.mono-lbl .lbl{font-family:var(--mono);font-size:11px}
+.pfig.half{max-width:600px}
+.pfig-row .pfig.half{max-width:none}
+.legend i[class^="k"],.legend i[class*=" k"]{width:18px;height:3px}
+.legend i.sq{width:10px;height:10px}
+.legend i.dot{width:10px;height:10px;border-radius:50%}
+.legend i.dot.open{background:var(--white)!important;outline:2px solid var(--ink-3);outline-offset:-2px}
+.legend i.dot.open.k1{outline-color:var(--accent)}.legend i.dot.open.k2{outline-color:var(--apply)}
+.legend i.dashed{background:none!important;height:0;border-top:2px dashed var(--bounce)}
+.legend i.dashed.k6{border-top-color:var(--ink-3)}.legend i.dashed.k1{border-top-color:var(--accent)}.legend i.dashed.k2{border-top-color:var(--apply)}
+svg.sketch .bx{fill:var(--white);stroke:var(--ink);stroke-width:1.2}
+svg.sketch .bx.soft{stroke:var(--rule-2)}
+svg.sketch .bx.ink{fill:var(--ink)}
+svg.sketch .bx.green{stroke:var(--accent);stroke-width:1.6}
+svg.sketch .bx.blue{stroke:var(--apply);stroke-width:1.6}
+svg.sketch .bx.red{stroke:var(--bounce);stroke-width:1.6}
+svg.sketch .bx.fill-g{fill:#e3efe7;stroke:var(--accent)}
+svg.sketch .bx.fill-b{fill:#e2eaf3;stroke:var(--apply)}
+svg.sketch .bx.fill-r{fill:#f5e4de;stroke:var(--bounce)}
+svg.sketch .bx.fill-y{fill:#f6ecc9;stroke:#c9961f}
+svg.sketch .bx.fill-n{fill:var(--paper-2);stroke:var(--rule-2)}
+svg.sketch .bx.dashed{stroke-dasharray:5 4}
+svg.sketch .bt{font-size:12.5px;font-weight:600;fill:var(--ink)}
+svg.sketch .bs{font-size:11px;fill:var(--ink-2)}
+svg.sketch .bs.mono,svg.sketch .al.mono{font-family:var(--mono);font-size:10.5px}
+svg.sketch .bt.inv,svg.sketch .bs.inv{fill:var(--paper)}
+svg.sketch .ar{fill:none;stroke:var(--ink-2);stroke-width:1.3}
+svg.sketch .ar.up{stroke:var(--bounce)}
+svg.sketch .ar.flow{stroke:var(--apply);stroke-width:2}
+svg.sketch .ar.green{stroke:var(--accent)}
+svg.sketch .arrhead{fill:var(--ink-2);fill:context-stroke}
+svg.sketch .al{font:500 10.5px/1 var(--mono);fill:var(--ink)}
+svg.sketch .an{font-size:10.5px;fill:var(--bounce);font-weight:600}
+svg.sketch .hd{font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;fill:var(--ink-2)}
+svg.sketch .num{font-size:11px;font-weight:600;fill:var(--apply);font-variant-numeric:tabular-nums}
+@media (max-width:980px){
+  .issue dl{grid-template-columns:1fr;gap:10px}
+  .eq-w{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .terms>div{grid-template-columns:1fr;gap:3px}
+  .eq{padding:12px 14px}
+  .eq-m{font-size:16px}
+}
+@media print{
+  .eq,.say,.ours,.issue{break-inside:avoid}
+}

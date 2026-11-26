@@ -1,0 +1,135 @@
+/* the project as flowcharts (project_flow.py); the figure frame and the .pj boxes come from prep.css */
+.fl-over{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin:26px 0 0;max-width:1100px}
+.fl-ov{position:relative;display:flex;flex-direction:column;gap:6px;padding:14px 16px 16px;background:var(--white);border:1px solid var(--rule-2);
+  border-left-width:0;color:var(--ink);text-decoration:none}
+.fl-ov:first-child{border-left-width:1px}
+.fl-ov.obj{border-top:3px solid var(--accent)}
+.fl-ov.out{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.fl-ov.out .lbl{color:#c5ccd2}
+.fl-ov b{font:600 17px/1.3 var(--serif)}
+.fl-ov span:last-child{font:13.5px/1.5 var(--sans);color:var(--ink-2)}
+.fl-ov.out span:last-child{color:#dfe3e6}
+.fl-ov:hover b,.fl-ov:focus-visible b{text-decoration:underline}
+.fl-ov:not(:last-child)::after{content:"";position:absolute;z-index:1;right:-7px;top:26px;width:12px;height:12px;background:var(--white);
+  border-top:1px solid var(--rule-2);border-right:1px solid var(--rule-2);transform:rotate(45deg)}
+.fl-eq{max-width:1100px}
+.fl-eq .pj-eq{margin-top:8px}
+.fl-key{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;max-width:1100px;margin:30px 0 0;padding:12px 0;
+  border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.fl-keys{display:flex;flex-wrap:wrap;gap:8px 22px;font:13px/1.3 var(--sans);color:var(--ink-2)}
+.fl-keys span{display:inline-flex;align-items:center;gap:8px}
+svg.flow.fl-keyshape{width:36px;min-width:0;height:20px;flex:none}
+.fl-key .btn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.fl-band>h3{margin-top:54px}
+.fl-fig{margin-top:18px}
+.fl-ask{margin:0 0 16px;max-width:84ch;font:italic 17px/1.5 var(--serif);color:var(--ink-2)}
+.fl-next{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:1100px;margin:14px 0 0;font:600 11px/1.3 var(--sans);
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);text-align:center}
+.fl-next::before{content:"";width:1px;height:26px;background:var(--accent)}
+.fl-next::after{content:"";width:9px;height:9px;margin-top:-4px;border-right:1px solid var(--accent);border-bottom:1px solid var(--accent);
+  transform:rotate(45deg)}
+.fl-plan{max-width:1100px}
+
+svg.flow{display:block;width:100%;height:auto;min-width:980px}
+svg.flow text{font-family:var(--sans);fill:var(--ink)}
+svg.flow .lane{font-size:10.5px;font-weight:600;letter-spacing:.12em;fill:var(--ink-3)}
+svg.flow .n-num{font-size:10.5px;font-weight:600;letter-spacing:.08em;fill:var(--accent)}
+svg.flow .n-t{font-size:14px;font-weight:600}
+svg.flow .n-b{font-size:12.5px;fill:var(--ink-2)}
+svg.flow .d-t{font-size:13.5px;font-weight:600}
+svg.flow .sh{fill:var(--white);stroke:var(--rule-2);stroke-width:1}
+svg.flow .fn{cursor:pointer;outline:none}
+svg.flow .fn:hover .sh,svg.flow .fn:focus-visible .sh{stroke:var(--ink);stroke-width:1.6}
+svg.flow .k-start .sh{stroke:var(--ink-2)}
+svg.flow .k-decision .sh,svg.flow .k-check .sh{fill:var(--paper-2);stroke:var(--ink-2)}
+svg.flow .k-result .sh{fill:var(--ink);stroke:var(--ink)}
+svg.flow .k-result text{fill:var(--paper)}
+svg.flow .k-result .n-b{fill:#dfe3e6}
+svg.flow .k-result .n-num{fill:#c5ccd2}
+svg.flow .k-bad .sh{stroke:var(--bounce);stroke-width:1.5}
+svg.flow .k-bad .n-num,svg.flow .k-gap .n-num{fill:var(--bounce)}
+svg.flow .k-gap .sh{stroke:var(--bounce);stroke-width:1.5;stroke-dasharray:6 4}
+svg.flow .fn.open .sh{stroke:var(--ink-2);stroke-dasharray:6 4}
+svg.flow .fn.open .n-num{fill:var(--amber)}
+svg.flow .fn.is-on .sh{stroke:var(--accent);stroke-width:2.6;stroke-dasharray:none}
+svg.flow .fn.flash .sh{fill:var(--mark)}
+svg.flow .e{fill:none;stroke:var(--ink);stroke-width:1.3}
+svg.flow .e.feed{stroke:var(--ink-3);stroke-width:1.1}
+svg.flow .e.loop{stroke:var(--bounce);stroke-dasharray:6 4}
+svg.flow .e.maybe{stroke-dasharray:6 4}
+svg.flow .m-ink path{fill:var(--ink)}
+svg.flow .m-feed path{fill:var(--ink-3)}
+svg.flow .m-loop path{fill:var(--bounce)}
+svg.flow .e-l{font-size:11.5px;font-style:italic;fill:var(--ink-2);paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round}
+svg.flow .e-l.loop{fill:var(--bounce)}
+svg.flow .fs .sh{fill:var(--paper-2);stroke:var(--rule-2)}
+svg.flow .fs.k-have .sh{fill:var(--white)}
+svg.flow .fs .bar{fill:var(--accent)}
+svg.flow .fs.open .sh{fill:var(--white);stroke:var(--ink-2);stroke-dasharray:6 4}
+svg.flow .fs .hit{fill:transparent}
+svg.flow .fs .rule{stroke:var(--apply);stroke-width:2}
+svg.flow .fs .tx{stroke:var(--ink-3);stroke-width:1.5}
+svg.flow .s-t{font-size:10.5px;font-weight:600;letter-spacing:.06em}
+svg.flow .s-b{font-size:12px;fill:var(--ink-2)}
+svg.flow a.fs{cursor:pointer}
+svg.flow a.fs:hover .s-t,svg.flow a.fs:focus-visible .s-t{fill:var(--apply);text-decoration:underline}
+.fl-only-open svg.flow .fn:not(.open),.fl-only-open svg.flow .fs:not(.open),.fl-only-open svg.flow .e,.fl-only-open svg.flow .e-l,
+.fl-only-open svg.flow .lane{opacity:.2}
+
+.fl-asks li{max-width:96ch}
+.fl-asks a{color:var(--ink);text-decoration:none}
+.fl-asks a:hover{text-decoration:underline}
+.fl-asks b{font:500 13px/1 var(--mono);color:var(--amber);margin-right:4px}
+.fl-list{max-width:1100px;border-bottom:1px solid var(--rule)}
+.fl-d{display:grid;grid-template-columns:58px minmax(0,1fr);gap:0 14px;padding:16px 0 15px;border-top:1px solid var(--rule);scroll-margin-top:calc(var(--nav-h) + 16px)}
+.fl-num{font:500 13px/1.75 var(--mono);color:var(--accent)}
+.fl-d.open .fl-num{color:var(--amber)}
+.fl-d h5{margin:0;font:600 18px/1.3 var(--serif)}
+.fl-tag{margin-left:8px;font:600 10px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--amber);white-space:nowrap}
+.fl-b{margin:3px 0 0;font:15px/1.5 var(--sans);color:var(--ink-2)}
+.fl-d dl{display:grid;grid-template-columns:168px minmax(0,1fr);gap:7px 18px;margin:11px 0 0;max-width:100ch;font:14.5px/1.55 var(--sans)}
+.fl-d dt{padding-top:3px;font:600 10.5px/1.5 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.fl-d dd{margin:0;color:var(--ink-2)}
+.fl-d dd.q{font:16px/1.5 var(--serif);color:var(--ink)}
+.fl-goto{display:inline-block;margin-top:10px;font:13px/1 var(--sans)}
+.fl-d:target,.fl-d.flash{background:linear-gradient(var(--mark),var(--mark)) left top/4px 100% no-repeat}
+.fl-d:target>.fl-num,.fl-d.flash>.fl-num{padding-left:10px}
+
+.fl-pop{position:absolute;z-index:40;width:410px;max-width:calc(100vw - 24px);padding:16px 20px 14px;background:var(--white);border:1px solid var(--ink);
+  box-shadow:0 12px 34px rgba(27,33,39,.2)}
+.fl-pop[hidden]{display:none}
+.fl-pop .fl-d{display:block;padding:0;border:0;background:none}
+.fl-pop .fl-num{display:block;padding:0;line-height:1.2;margin-bottom:5px}
+.fl-pop h5{padding-right:22px}
+.fl-pop .fl-d dl{grid-template-columns:1fr;gap:0;font-size:14px}
+.fl-pop .fl-d dt{margin-top:10px;padding:0}
+.fl-pop .fl-goto{display:none}
+.fl-pop-x{position:absolute;top:6px;right:8px;width:30px;height:30px;border:0;background:none;font:400 22px/1 var(--sans);color:var(--ink-2);cursor:pointer}
+.fl-pop-x:hover{color:var(--ink)}
+.fl-pop-more{display:inline-block;margin-top:12px;font:13px/1 var(--sans)}
+
+@media (max-width:1000px){
+  .fl-over{grid-template-columns:1fr}
+  .fl-ov{border-left-width:1px;border-top-width:0}
+  .fl-ov:first-child{border-top-width:1px}
+  .fl-ov.obj{border-top:0;border-left:3px solid var(--accent)}
+  .fl-ov:not(:last-child)::after{display:none}
+  .fl-eq .pj-eq{grid-template-columns:1fr}
+  .fl-eq .pj-op{padding:6px 0}
+}
+@media (max-width:700px){
+  .fl-pop{position:fixed;left:0!important;right:0;top:auto!important;bottom:0;width:auto;max-width:none;max-height:72vh;overflow:auto;border-width:1px 0 0}
+  .fl-d{grid-template-columns:1fr}
+  .fl-d dl{grid-template-columns:1fr;gap:0}
+  .fl-d dt{margin-top:9px}
+  .fl-plan .pj-years{grid-template-columns:1fr}
+  .fl-plan .pj-years>div{border-left:0;border-top:1px solid var(--rule-2)}
+  .fl-plan .pj-years>div:first-child{border-top:0}
+  .fl-plan .pj-mark{display:none}
+}
+@media print{
+  .fl-pop,.fl-key .btn,.fl-goto{display:none!important}
+  svg.flow{min-width:0}
+  .fl-band{break-before:page}
+  .fl-fig,.fl-d{break-inside:avoid}
+}

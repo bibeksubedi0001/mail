@@ -1,0 +1,100 @@
+/* the IELTS pages (ielts.py) */
+.ielts-kf .lbl a{color:var(--ink)}
+.ielts-facts dd{font-size:16px}
+table.iband{max-width:1100px}
+table.iband td:first-child{min-width:0;white-space:nowrap}
+table.iband td:nth-child(2),table.iband td:nth-child(3){white-space:nowrap;font-variant-numeric:tabular-nums}
+.inotes-top{margin:26px 0 0;max-width:110ch}
+.inotes-top .note{margin:0 0 8px;font-size:14.5px;color:var(--ink-2)}
+.ijumps{margin:20px 0 0;padding:12px 0 2px;border-top:1px solid var(--rule)}
+.ijump{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:0 0 10px;font:13.5px/1.5 var(--sans);font-variant-numeric:tabular-nums}
+.ijump a{color:var(--ink-2);text-decoration:none}
+.ijump a:hover{color:var(--accent);text-decoration:underline}
+.ijump .ijump-g{flex:none;min-width:250px;font-weight:600;color:var(--ink)}
+.ielts-bar{position:sticky;top:calc(var(--nav-h) + 47px);z-index:12;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:14px 0 0;
+  padding:11px 0;background:var(--paper);border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.ielts-bar .count{margin-left:auto}
+.itimer{display:inline-flex;flex-wrap:wrap;align-items:center;gap:8px}
+.iclock{min-width:0;font:600 15px/1 var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.iclock:not(:empty){padding:7px 10px;background:var(--ink);color:var(--paper)}
+.iclock.is-b{background:var(--accent)}
+.iclock.is-up{background:var(--bounce)}
+.ipart{font:600 26px/1.2 var(--serif);letter-spacing:-.01em;margin:54px 0 0}
+.ipart+.plan-sec>h3{margin-top:22px}
+/* the page already keeps a link's target clear of the top bar and the tab bar; this adds the height of the practice bar */
+.ielts-sec,.ipart,.itask,.iqa{scroll-margin-top:64px}
+.ielts-sec>h3{flex-wrap:wrap}
+.ielts-sec>h3 .isub{flex:1 1 320px;font:400 14px/1.4 var(--sans);letter-spacing:0;text-transform:none;color:var(--ink-2)}
+.ielts-sec>h3 .h3n{margin-left:auto}
+.iqa{padding:20px 0 18px;border-bottom:1px solid var(--rule)}
+.iq{display:flex;align-items:baseline;gap:16px}
+.iq h4,.itask h4{flex:1;margin:0;font:600 19px/1.35 var(--serif);letter-spacing:-.003em}
+.icode{flex:none;width:76px;font:500 11.5px/1.4 var(--mono);color:var(--ink-3)}
+.iqa-body{margin:8px 0 0 92px;max-width:78ch}
+.ia p{margin:0 0 11px}
+.ia p:last-child{margin-bottom:0}
+.iqa.is-done h4,.itask.is-done h4{color:var(--ink-2)}
+.iqa.flash,.itask.flash{animation:iflash 1.8s ease-out}
+@keyframes iflash{from{background:var(--mark)}to{background:transparent}}
+.icheck{margin-top:12px!important;padding:8px 12px;border-left:3px solid var(--amber);background:var(--white);font:13.5px/1.5 var(--sans);color:var(--ink-2)}
+.icheck .lbl{margin-right:6px;color:var(--amber)}
+.itask{padding:28px 0 28px;border-bottom:1px solid var(--rule)}
+.itask>header{display:flex;align-items:baseline;gap:16px;margin:0 0 16px}
+.itag{flex:none;min-width:76px;font:600 11px/1.5 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.itask h4{font-size:22px;line-height:1.28}
+.itask-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 56px;align-items:start}
+.itask-body.k-w2,.itask-body.k-s2{grid-template-columns:minmax(0,4fr) minmax(0,7fr)}
+.iside{min-width:0}
+.iprompt,.icard{padding:14px 18px 15px;background:var(--white);border:1px solid var(--rule-2);border-left:3px solid var(--ink)}
+.iprompt p,.icard p{margin:0}
+.iprompt .lbl,.icard .lbl,.inotes .lbl{display:block;margin:0 0 7px}
+.iprompt p:last-child{font-size:16.5px;line-height:1.55}
+.icard-h{font-weight:600;line-height:1.45}
+.icard-s{margin-top:10px!important;font:14px/1.5 var(--sans);color:var(--ink-2)}
+.icard ul{margin:4px 0 6px;padding-left:1.2em;font-size:16px;line-height:1.5}
+.icard-e{font-size:16px;line-height:1.5}
+.inotes{margin:16px 0 0;padding:0 0 0 18px;border-left:3px solid var(--rule-2)}
+.inotes ul{list-style:none;margin:0;padding:0;font:14.5px/1.5 var(--sans);color:var(--ink-2)}
+.inotes li{display:inline}
+.inotes li+li::before{content:"\00b7";margin:0 7px;color:var(--ink-3)}
+.ifig{margin:16px 0 0}
+.ifig a{display:block;line-height:0}
+.ifig img{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--rule)}
+.itable{width:100%;max-width:560px;border-collapse:collapse;background:#fff;border:1px solid var(--rule);font:14px/1.4 var(--sans);font-variant-numeric:tabular-nums}
+.itable th{padding:9px 14px;text-align:left;font-weight:600;border-bottom:1px solid var(--ink)}
+.itable td{padding:7px 14px;border-bottom:1px solid var(--rule)}
+.itable th:not(:first-child),.itable td:not(:first-child){text-align:right}
+.imeta{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin:0 0 12px!important;padding-bottom:9px;border-bottom:1px solid var(--rule)}
+.iabout{font:13.5px/1.4 var(--sans);color:var(--ink-2)}
+.iwc{margin-left:auto;font:500 12.5px/1.4 var(--sans);font-variant-numeric:tabular-nums;color:var(--ink-3)}
+.iwc.low{color:var(--bounce);font-weight:600}
+.itask .ia{max-width:74ch}
+.ishow{display:none;margin:12px 0 0;font:13.5px/1.4 var(--sans)}
+.iqa-body .ishow{margin:0}
+.ielts-q .ishow,.ielts-notes .itask .ishow{display:inline-block}
+.ielts-q [data-iq]:not(.is-open) .ia{display:none}
+.ielts-q [data-iq]:not(.is-open) .inotes{display:none}
+.ielts-notes [data-iq]:not(.is-open) .ia{display:none}
+.ielts-q .itask-body,.ielts-notes .itask-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.i-out{display:none!important}
+@media (max-width:1180px){
+  .ielts-nav .k{display:none}
+  .itask-body,.itask-body.k-w2,.itask-body.k-s2,.ielts-q .itask-body,.ielts-notes .itask-body{grid-template-columns:minmax(0,1fr);gap:20px 0}
+  .ifig img{max-width:100%}
+  .ielts-bar{position:static}
+  .ielts-sec,.ipart,.itask,.iqa{scroll-margin-top:0}
+}
+@media (max-width:760px){
+  .iq,.itask>header{flex-wrap:wrap;gap:4px 12px}
+  .icode,.itag{width:auto;min-width:0}
+  .iq h4,.itask h4{flex:1 1 100%;order:3}
+  .iqa-body{margin-left:0}
+  .ijump .ijump-g{min-width:100%}
+  .itable{font-size:13px}
+  .itable th,.itable td{padding:7px 8px}
+}
+@media print{
+  .ielts-bar,.ijumps,.ishow,.icheck{display:none!important}
+  .ia,.inotes{display:block!important}
+  .itask,.iqa{break-inside:avoid}
+}
